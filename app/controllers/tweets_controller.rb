@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    Tweet.create(name: params[:name], image:tweet_params[:image], text: tweet_params[:text], user_id: tweet_current_user.id)
   end
 
   private
